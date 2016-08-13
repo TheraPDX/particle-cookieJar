@@ -10,6 +10,7 @@
  *   Design:
  *       -Sparkfun SEN-13230 HX711 Load Cell Amp connected to A0, A1.
  *       -Any Adafruit NeoPixel Cluster connected to D2
+ *       -App publishes the cookieStr to the cloud of number of cookies.
  *
  *   To use:
  *      -Calibrate your scale:
@@ -131,7 +132,7 @@ void loop() {
 
     if (numCookies != prevNumCookies || update++ > 10) {
         sprintf(string, "%d", numCookies);
-        Particle.publish("cookieStr", string, NO_ACK);
+        Particle.publish("jmcanana/cookieStr", string, NO_ACK);
         prevNumCookies = numCookies;
         update = 0;
     }
