@@ -139,7 +139,7 @@ void loop() {
     Serial.print("Number of cookies in the jar.. :\t");
     Serial.println(numCookies);
 
-    setNeoStrip();
+    setNeoStrip(numCookies);
 
 
     delay(10);
